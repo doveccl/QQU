@@ -7,7 +7,7 @@
 #define LIBNAME "libQQUnrecall.dylib"
 
 #define HOOK "export " LIBENV "=%s" LIBPATH LIBNAME
-#define RUN "open -a QQ"
+#define RUN "/Applications/QQ.app/Contents/MacOS/QQ"
 
 #define CMD HOOK " && " RUN
 

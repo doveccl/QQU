@@ -1,6 +1,7 @@
 #import <stdio.h>
 #import <stdlib.h>
 #import <string.h>
+#import <unistd.h>
 
 #define LIBENV "DYLD_INSERT_LIBRARIES"
 #define LIBPATH "../Resources/"
@@ -25,6 +26,8 @@ int main(int argc, char **argv) {
         path[i] = 0;
     }
     sprintf(buff, CMD, path);
-    system(buff);
+
+    pid_t pid = fork();
+    if (pid == 0) system(buff);
     return 0;
 }
